@@ -1,0 +1,17 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TreatWarningsAsErrors Condition="'$(Configuration)' == 'Release'">true</TreatWarningsAsErrors>
+    <Deterministic>true</Deterministic>
+
+    <Product>Centerly</Product>
+    <Company>ducker-lab</Company>
+    <Copyright>© 2026 ducker-lab</Copyright>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+</Project>

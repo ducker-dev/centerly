@@ -1,0 +1,51 @@
+name: Release
+
+# Push a tag like v0.2.0 to build, pack and publish a GitHub release with installer and update packages.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    env:
+      REPO_URL: https://github.com/${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Test
+        run: dotnet test --solution Centerly.slnx -c Release
+
+      - name: Version from tag
+        shell: pwsh
+        run: echo "VERSION=$('${{ github.ref_name }}'.TrimStart('v'))" >> $env:GITHUB_ENV
+
+      # Previous release lets Velopack build a small delta update package.
+      - name: Download previous release
+        shell: pwsh
+        run: |
+          dotnet tool restore
+          dotnet vpk download github --repoUrl $env:REPO_URL --token ${{ secrets.GITHUB_TOKEN }} -o artifacts/releases/win-x64
+        continue-on-error: true
+
+      - name: Build and pack
+        shell: pwsh
+        run: ./tools/publish.ps1 -Version $env:VERSION -RepositoryUrl $env:REPO_URL
+
+      - name: Publish GitHub release
+        shell: pwsh
+        run: >
+          dotnet vpk upload github
+          --repoUrl $env:REPO_URL
+          --token ${{ secrets.GITHUB_TOKEN }}
+          --outputDir artifacts/releases/win-x64
+          --publish
+          --releaseName "Centerly $env:VERSION"
+          --tag ${{ github.ref_name }}

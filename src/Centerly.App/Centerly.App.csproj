@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Centerly</AssemblyName>
+    <RootNamespace>Centerly.App</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <NeutralLanguage>en</NeutralLanguage>
+    <SatelliteResourceLanguages>ru</SatelliteResourceLanguages>
+
+    <!-- Custom Main in Program.cs (Velopack hooks and elevated helper commands run before WPF starts). -->
+    <EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
+    <StartupObject>Centerly.App.Program</StartupObject>
+
+    <!-- GitHub repository with releases for auto-updates, e.g. https://github.com/user/centerly.
+         Empty disables update checks. CI passes it with -p:UpdateRepositoryUrl=... -->
+    <UpdateRepositoryUrl Condition="'$(UpdateRepositoryUrl)' == ''"></UpdateRepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AssemblyMetadata Include="UpdateRepositoryUrl" Value="$(UpdateRepositoryUrl)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- WPF projects leave System.IO out of implicit usings because of System.Windows.Shapes.Path. -->
+    <Using Include="System.IO" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Strings.Designer.cs is generated together with the .resx files by tools/strings.py. -->
+    <EmbeddedResource Update="Resources\Strings.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WPF-UI" />
+    <PackageReference Include="H.NotifyIcon.Wpf" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="Serilog" />
+    <PackageReference Include="Serilog.Sinks.File" />
+    <PackageReference Include="Velopack" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Centerly.Core\Centerly.Core.csproj" />
+  </ItemGroup>
+
+</Project>

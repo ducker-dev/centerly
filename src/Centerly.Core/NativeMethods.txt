@@ -1,0 +1,66 @@
+// Windows
+GetForegroundWindow
+GetAncestor
+GetShellWindow
+GetDesktopWindow
+GetClassName
+GetWindowLong
+GetWindowRect
+GetWindowThreadProcessId
+IsWindow
+IsWindowVisible
+IsIconic
+IsZoomed
+IsHungAppWindow
+SetWindowPos
+GetWindowPlacement
+SetWindowPlacement
+
+// Monitors
+MonitorFromWindow
+GetMonitorInfo
+MonitorFromPoint
+
+// DWM
+DwmGetWindowAttribute
+
+// Hotkeys / message window
+RegisterHotKey
+UnregisterHotKey
+RegisterClassEx
+UnregisterClass
+CreateWindowEx
+DestroyWindow
+DefWindowProc
+GetModuleHandle
+WM_HOTKEY
+
+// Errors
+WIN32_ERROR
+
+// Window events (auto-centering)
+SetWinEventHook
+UnhookWinEvent
+EVENT_OBJECT_SHOW
+EVENT_OBJECT_UNCLOAKED
+EVENT_SYSTEM_MOVESIZESTART
+WINEVENT_OUTOFCONTEXT
+WINEVENT_SKIPOWNPROCESS
+CHILDID_SELF
+
+// Enumeration and identity
+GetWindow
+EnumWindows
+EnumChildWindows
+GetWindowTextLength
+GetWindowText
+OpenProcess
+QueryFullProcessImageName
+GetProcessTimes
+
+// Monitors, picking and overlay
+EnumDisplayMonitors
+WindowFromPoint
+GetCursorPos
+SetWindowLong
+HWND_TOPMOST
