@@ -1,6 +1,6 @@
 # Centerly
 
-Скачать: [последний релиз](https://github.com/ducker-dev/centerly/releases/latest), файл `Centerly-win-Setup.exe`.
+Скачать: [последний релиз](https://github.com/ducker-dev/centerly/releases/latest), файл `Centerly-win-Setup.exe`. Подпись кода: [Code signing policy](#code-signing-policy).
 
 Утилита для Windows 10/11, которая центрирует окна:
 
@@ -91,6 +91,38 @@ dotnet run --project src/Centerly.App
 - [ ] Смена языка и «Перезапустить».
 - [ ] Установка, обновление на следующую версию и удаление через «Параметры → Приложения».
 - [ ] Windows 10.
+
+## Code signing policy
+
+Free code signing provided by [SignPath.io](https://about.signpath.io), certificate by [SignPath Foundation](https://signpath.org).
+
+Starting with the first signed release, the Windows installer (`Centerly-win-Setup.exe`) and the application executables published on [GitHub Releases](https://github.com/ducker-dev/centerly/releases) are signed. They are built only by the [Release workflow](.github/workflows/release.yml) on GitHub Actions from this repository's source code; a release is triggered by pushing a version tag. Every signing request is approved manually.
+
+### Team roles
+
+| Role | Members |
+|---|---|
+| Authors (committers): may change the source code without additional review | [ducker-dev](https://github.com/ducker-dev) |
+| Reviewers: review changes from contributors, such as pull requests | [ducker-dev](https://github.com/ducker-dev) |
+| Approvers: approve each signing request | [ducker-dev](https://github.com/ducker-dev) |
+
+### Privacy policy
+
+This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it, with this exception:
+
+- **Update checks.** When "Check for updates automatically" is enabled (the default) or the user clicks "Check now", the program requests the list of releases from GitHub (`github.com`) and downloads an update only when the user chooses to install it. No personal data, settings or usage statistics are sent; GitHub receives the usual request data such as the IP address. See the [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). Automatic checks can be turned off on the "General" tab.
+
+The program has no telemetry. Settings and logs are stored only on the local computer (see "Где лежат данные" above).
+
+### Verifying a download
+
+Open the file's Properties → Digital Signatures, or run in PowerShell:
+
+```powershell
+Get-AuthenticodeSignature .\Centerly-win-Setup.exe
+```
+
+If you believe a signed file is malicious or has been tampered with, do not run it and [open an issue](https://github.com/ducker-dev/centerly/issues) with the file's SHA256 hash and where you downloaded it.
 
 ## Лицензия
 
