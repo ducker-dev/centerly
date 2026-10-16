@@ -210,6 +210,7 @@
     .foot-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
     .foot-links a { color: var(--text-muted); }
     .foot-links a:hover { color: var(--text); }
+    .signing { flex-basis: 100%; }
   </style>
 </head>
 <body>
@@ -332,7 +333,7 @@
         <div class="faq">
           <details>
             <summary data-i18n="q1">Windows says “Windows protected your PC”. Is it safe?</summary>
-            <p data-i18n-html="a1">The installer is built by GitHub Actions straight from the public source code, but it is not code-signed yet, so SmartScreen does not recognize it. Click “More info” → “Run anyway”. Signing is in progress, see the <a href="https://github.com/ducker-dev/centerly#code-signing-policy">code signing policy</a>.</p>
+            <p data-i18n-html="a1">The installer is built by GitHub Actions straight from the public source code, but it is not code-signed yet, so SmartScreen does not recognize it. Click “More info” → “Run anyway”. Code signing via the SignPath Foundation is being set up, see the <a href="https://github.com/ducker-dev/centerly#code-signing-policy">code signing policy</a>.</p>
           </details>
           <details>
             <summary data-i18n="q2">Does it collect any data?</summary>
@@ -379,6 +380,7 @@
         <a href="https://github.com/ducker-dev/centerly/issues" data-i18n="issues">Report a problem</a>
         <a href="https://t.me/ducker_dev">Telegram @ducker_dev</a>
       </div>
+      <span class="signing" data-i18n-html="signing">Free code signing provided by <a href="https://about.signpath.io">SignPath.io</a>, certificate by <a href="https://signpath.org">SignPath Foundation</a>. See the <a href="https://github.com/ducker-dev/centerly#code-signing-policy">code signing policy</a>.</span>
     </div>
   </footer>
 
@@ -408,7 +410,7 @@
         shot1Alt: "Hotkeys tab", shot2Alt: "Auto-centering tab",
         faqTitle: "Questions",
         q1: "Windows says “Windows protected your PC”. Is it safe?",
-        a1: 'The installer is built by GitHub Actions straight from the public source code, but it is not code-signed yet, so SmartScreen does not recognize it. Click “More info” → “Run anyway”. Signing is in progress, see the <a href="https://github.com/ducker-dev/centerly#code-signing-policy">code signing policy</a>.',
+        a1: 'The installer is built by GitHub Actions straight from the public source code, but it is not code-signed yet, so SmartScreen does not recognize it. Click “More info” → “Run anyway”. Code signing via the SignPath Foundation is being set up, see the <a href="https://github.com/ducker-dev/centerly#code-signing-policy">code signing policy</a>.',
         q2: "Does it collect any data?",
         a2: 'No. There is no telemetry. The only network request is the update check against GitHub Releases, and it can be turned off in the settings. Details in the <a href="https://github.com/ducker-dev/centerly#privacy-policy">privacy policy</a>.',
         q3: "Why doesn't a window of some program move?",
@@ -418,6 +420,7 @@
         q5: "How do I uninstall it?", a5: "Like any other app: Settings → Apps → Installed apps → Centerly → Uninstall.",
         finalTitle: "Try it — it takes a minute", finalLead: "Free, no ads, no account.", allReleases: "All releases",
         copyright: "© 2026 ducker-dev · MIT License", privacy: "Privacy", license: "License", issues: "Report a problem",
+        signing: 'Free code signing provided by <a href="https://about.signpath.io">SignPath.io</a>, certificate by <a href="https://signpath.org">SignPath Foundation</a>. See the <a href="https://github.com/ducker-dev/centerly#code-signing-policy">code signing policy</a>.',
       },
       ru: {
         pageTitle: "Centerly — центрирование окон в Windows",
@@ -443,7 +446,7 @@
         shot1Alt: "Вкладка «Сочетания клавиш»", shot2Alt: "Вкладка «Автоцентрирование»",
         faqTitle: "Вопросы",
         q1: "Windows пишет «Система Windows защитила ваш компьютер». Это безопасно?",
-        a1: 'Установщик собирается в GitHub Actions прямо из открытого исходного кода, но пока не подписан, поэтому SmartScreen его не узнаёт. Нажмите «Подробнее» → «Выполнить в любом случае». Подпись кода оформляется, см. <a href="https://github.com/ducker-dev/centerly#code-signing-policy">политику подписи кода</a>.',
+        a1: 'Установщик собирается в GitHub Actions прямо из открытого исходного кода, но пока не подписан, поэтому SmartScreen его не узнаёт. Нажмите «Подробнее» → «Выполнить в любом случае». Подпись кода через SignPath Foundation сейчас оформляется, см. <a href="https://github.com/ducker-dev/centerly#code-signing-policy">политику подписи кода</a>.',
         q2: "Собирает ли программа данные?",
         a2: 'Нет. Телеметрии нет. Единственное сетевое обращение — проверка обновлений на GitHub Releases, её можно отключить в настройках. Подробнее в <a href="https://github.com/ducker-dev/centerly#privacy-policy">политике конфиденциальности</a>.',
         q3: "Почему не двигается окно какой-то программы?",
@@ -453,6 +456,7 @@
         q5: "Как удалить?", a5: "Как любое приложение: Параметры → Приложения → Установленные приложения → Centerly → Удалить.",
         finalTitle: "Попробуйте — это займёт минуту", finalLead: "Бесплатно, без рекламы и регистрации.", allReleases: "Все релизы",
         copyright: "© 2026 ducker-dev · Лицензия MIT", privacy: "Конфиденциальность", license: "Лицензия", issues: "Сообщить о проблеме",
+        signing: 'Бесплатная подпись кода — <a href="https://about.signpath.io">SignPath.io</a>, сертификат — <a href="https://signpath.org">SignPath Foundation</a>. Подробнее в <a href="https://github.com/ducker-dev/centerly#code-signing-policy">политике подписи кода</a>. <span lang="en">Free code signing provided by SignPath.io, certificate by SignPath Foundation.</span>',
       },
     };
 
