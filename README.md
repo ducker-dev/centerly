@@ -1,6 +1,6 @@
 # Centerly
 
-Скачать: [последний релиз](https://github.com/ducker-dev/centerly/releases/latest), файл `Centerly-win-Setup.exe`. Подпись кода: [Code signing policy](#code-signing-policy).
+Сайт: **[ducker-dev.github.io/centerly](https://ducker-dev.github.io/centerly/)** · Скачать: [последний релиз](https://github.com/ducker-dev/centerly/releases/latest), файл `Centerly-win-Setup.exe` · Подпись кода: [Code signing policy](#code-signing-policy).
 
 Утилита для Windows 10/11, которая центрирует окна:
 
@@ -58,6 +58,7 @@ dotnet run --project src/Centerly.App
 | `tools/strings.py` | Все строки интерфейса (RU/EN). После правки запустите `python tools/strings.py` |
 | `tools/publish.ps1` | Сборка релиза и упаковка Velopack |
 | `tools/make-icon.ps1` | Генерация `app.ico` |
+| `site/` | Лендинг на GitHub Pages, публикуется workflow `pages.yml` при изменениях в `site/` |
 
 ## Где лежат данные
 
